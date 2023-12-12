@@ -151,6 +151,15 @@ RUN set -eux; \
 			"; \
 			;; \
 			\
+		loongarch64) \
+			setConfs="$setConfs \
+				BR2_loongarch64=y \
+			"; \
+			unsetConfs="$unsetConfs \
+				BR2_LOONGARCH_SOFT_FLOAT \
+			"; \
+			;; \
+			\
 # TODO s390x ? (needs BR2_TOOLCHAIN_BUILDROOT_UCLIBC support)
 			\
 		*) \

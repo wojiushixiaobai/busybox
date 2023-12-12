@@ -9,6 +9,10 @@ if [ "$#" -eq 0 ]; then
 fi
 
 for dir; do
+	# TODO loongarch64 ? (build fails)
+	if [[ $dir =~ uclibc ]]; then
+		continue
+	fi
 	base="busybox:${dir////-}"
 	(
 		set -x
